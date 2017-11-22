@@ -1,0 +1,23 @@
+# Composer
+.composer
+vendor/*
+!*/vendor/*
+composer.lock
+
+# Sass
+.sass-cache
+
+# OS Generated
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
+
+# npm 
+node_modules
+package-lock.json
+
+# logs
+logs
+logs/*

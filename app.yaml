@@ -1,0 +1,24 @@
+runtime: php55
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /.*
+  script: public_html/index.php
+
+- url: /robots.txt
+  static_files: public_html/robots.txt
+  upload: public_html/robots.txt
+
+- url: /assets/css/(.*\.(css|map))$
+  static_files: public_html/assets/css/\1
+  upload: public_html/assets/css/.*\.(css|map)$
+
+- url: /assets/js/(.*\.(js))$
+  static_files: public_html/assets/js/\1
+  upload: public_html/assets/js/.*\.(js)$
+
+- url: /assets/images/(.*\.(gif|png|jpg|ico))$
+  static_files: public_html/assets/images/\1
+  upload: public_html/assets/images/.*\.(gif|png|jpg|ico)$
