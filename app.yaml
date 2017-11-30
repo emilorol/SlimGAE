@@ -3,10 +3,6 @@ api_version: 1
 threadsafe: true
 
 handlers:
-
-- url: /.*
-  script: public_html/index.php
-
 - url: /robots.txt
   static_files: public_html/robots.txt
   upload: public_html/robots.txt
@@ -22,3 +18,13 @@ handlers:
 - url: /assets/images/(.*\.(gif|png|jpg|ico))$
   static_files: public_html/assets/images/\1
   upload: public_html/assets/images/.*\.(gif|png|jpg|ico)$
+
+- url: /(.+)
+  script: public/\1
+
+- url: /
+  script: public/index.php
+
+skip_files:
+- ^node_modules
+- ^.sass-cache
